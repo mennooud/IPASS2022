@@ -52,6 +52,9 @@ class AudioStream(QtWidgets.QWidget):
 
 
     def unpack(self, newdata):
+        '''
+        :param newdata: copy of data in Numpy array
+        '''
         newdata = np.frombuffer(newdata, 'int16')
         c = self.CHUNK
         self.data[:-c] = self.data[c:]
@@ -79,6 +82,9 @@ class AudioStream(QtWidgets.QWidget):
 class QtVizualize(object):
     def __init__(self):
         super(QtVizualize, self).__init__()
+        '''
+        Settings for visualization
+        '''
 
         pg.setConfigOptions(antialias=True)
         self.app = QtGui.QApplication(sys.argv)
@@ -136,8 +142,11 @@ class QtVizualize(object):
         b.setEnabled(True)
 
 
-# Strobe werkt niet in PyQT helaas.
+
     def strobe(self):
+        '''
+        Strobe currently not working. Trying to fix for the demo, waiting for materials.
+        '''
         self.strobe = self.p2.isChecked()
 
 
