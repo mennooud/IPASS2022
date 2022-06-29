@@ -1,0 +1,7 @@
+python >=3.9
+sys
+numpy
+scipy
+pyaudio
+pyqtgraph
+qtpy
